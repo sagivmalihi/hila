@@ -14,6 +14,7 @@
 
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{graphicx}
+\usepackage{subfigure}
 
 \newtheorem*{proposition}{Proposition}
 \newtheorem*{prop}{Proposition}
@@ -50,7 +51,7 @@ These fitness functions define a set of optimal points on the space of possible 
 \end{abstract}
 %\pagebreak
 \section{Introduction}
-The basic assumption of evolution is “survival of the fittest” - 
+The basic assumption of evolution is “survival of the fitted” - 
 random mutations constantly occur, and there is a natural selection of those  mutations that are fittest in their environments. 
 In the context of “multiple objective evolution”, 
 the fitness is measured with respect to several “tasks” – e.g. - swimming, running etc. 
@@ -87,7 +88,7 @@ For each such data set - attempting to recover the archetypes and understand the
 \end{itemize}
 
 So far, the first question has been answered in the following setting: 
-assume an arbitrary inner product on $\mathbb{R}^n$. 
+Let $X = \mathbb{R}^n$. Assume an arbitrary inner product on $\mathbb{R}^n$. 
 Denote the norm derived from this inner product by $\norm[.]$. 
 Assume that all $f_i(x) = f_i(\norm[(x-xi)]$ and are strictly monotonically decreasing. 
 In this setting, Dr Guy Shinar has proven that the Pareto Frontier $x_1,\ldots,x_k$ equals their convex hull.
@@ -113,22 +114,22 @@ correspond to a rodent whose first molar is twice the size of its second molar,
 and its 3rd molar is inexistent. 
 The species that are plotted near this point are faunivorous. 
 Hence, there is a reason to suspect that those proportions are anatomically suited for eating meat.
-\item The lengths of the phalanges of approx. 70 bird species whose middle finger has 4 phalanges were measured. 
-Denote the lengths of the 1st, 2nd, 3rd and 4th phalanges by 
+\item The lengths of the phalanges of approx. 70 bird species whose 4th digit has 4 phalanges were measured (see Figure \ref{fig:bones}). 
+Denote the lengths of the 1st, 2nd, 3rd and 4th phalanges by    
 $A_1,A_2,A_3$ and $A_4$ respectively. 
 The data is placed on a three dimensional space whose axes are 
 $A_2/A_1$, $A_3/A_1$ and $A_4/A_1$. 
-The surprising phenomena is that most of the data lies on a plane (see Figure \ref{fig:birds}).
-Looking only at this plane, and discarding the raptors, all other points seem to form a triangle. 
+The surprising phenomena is that most of the data lies on a plane.
+Looking only at this plane, and discarding the raptors, all other points seem to form a triangle  (see Figure \ref{fig:birds}). 
 A simple algorithm that searches for the smallest triangle that contains as many points as possible 
 was applied on the data. 
 The corners of the resulting triangle represent the 3 suspected archetypes. 
-The first archetype corresponds to a bird whose 4 phalanges are of the same length, 
-proportions which are optimal for grabbing. 
-The second archetype corresponds to a bird whose first phalanx is very long, 
-which is anatomically ideal for walking. 
-The third archetype corresponds to a bird whose fourth phalanx is very long, 
-which we suspect is anatomically ideal for digging. 
+The first archetype corresponds to a bird whose 4 phalanges are of the same length. We suspect those 
+proportions are optimal for grabbing. 
+The second archetype corresponds to a bird whose first phalanx is very long. We 
+suspect this is anatomically ideal for walking. 
+The third archetype corresponds to a bird whose fourth phalanx is very long. We 
+suspect this is anatomically ideal for digging. 
 It is important to mention that those are just preliminary results, and further work is needed in order to 
 properly establish the above claims.
 \end{itemize}
@@ -145,7 +146,7 @@ The first step will be to approach the question of the Pareto Frontier’s shape
 for a more general case than the one already proven. 
 In that case, the fitness functions are still of the form 
 $f_i(x) = f_i(\norm[x-x_i])$. However, the used norm ($\norm[.]$) can be different for each archetype. 
-This means that differing from one archetype doesn’t have the same biological meaning as differing 
+This means that differing from one archetype doesn’t have the same biological implications as differing 
 from a second archetype. The steps toward answering this question will be to:
 \begin{itemize}
   \item Solve several examples numerically
@@ -157,7 +158,7 @@ From this I hope to gain insight on how data that fit the model might look.
 I expect to discover that in the more general case the Pareto Frontier can differ from the convex hull.
 
 The second step will be to build a data pool of relevant cases, 
-such as birds’ finger lengths, dogs’ teeth and so forth, and check if they fit the model.
+such as length of birds fingers , shape of dogs teeth, colour of butterflies wings and so forth, and check if they fit the model.
 Doing this will require to deal with the following tasks:
 \begin{itemize}
   \item Develop a statistical framework for determining how well a data set supports our model. 
@@ -166,21 +167,34 @@ Doing this will require to deal with the following tasks:
 	Are there other tests?
   \item Think of a statistical test to check if the data is a convex hull of a finite set of points. 
 	This question becomes more complicated if we also consider the possibility that some of the 
-	archetypes themselves don't exist in nature. 
+	archetypes themselves are not existent in nature. 
 	This might form a convex hull with regions that aren't occupied by any existent species. 
 	Develop an algorithm to best determine the number and locations of archetypes.
   \item Try to infer the biological functions of the various archetypes from the data.
 \end{itemize}
+
+
 
 More questions to approach:
 Is there a biological mechanism that guarantees that the evolution will be performed only on the Pareto Frontier?
 Can this principle (species reside in the Pareto Frontier generated by a number of archetypes) 
 be generalized to describe other phenomena in nature, such as enzymes design?
 
+\pagebreak
 
 \begin{figure}
-\includegraphics{Birds.jpg}
-\caption{Write something here} 
+\includegraphics[width=0.4in]{bones.png}
+\caption{A bird whose 4th digit has four phalanges.}
+
+\label{fig:bones}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure[]{\includegraphics[width=2.4in]{birds2.eps}}
+\subfigure[]{\includegraphics[width=2.4in]{birds1.eps}}
+\caption{Each circle represent a bird species. $a_1, a_2, a_3$ and $a_4$ are the lengths of the 1st, 2nd, 3rd and 4th phalanx of that species' 4th digit, respectively. The colour of the circle represents the species' functional family. It can be seen that most of the data lies on a plane (a). Looking at this plane, and discarding the raptors, the data circles seem to form a triangle (b). The approximated triangle is plotted on the figure (black solid line).} 
+
 \label{fig:birds}
 \end{figure}
 
