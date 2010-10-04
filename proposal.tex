@@ -47,23 +47,23 @@
 \begin{abstract}
 We propose a model for multiple-objectives evolution in which several archetypes exist, 
 each optimal for a certain objective or fitness function. 
-These fitness functions define a set of optimal points on the space of possible species. In the suggested research ‚Äì we propose to theoretically analyze the above model, and attempt to validate it by analysis of various data sets.
+These fitness functions define a set of optimal points on the space of possible species. In the suggested research - we propose to theoretically analyze the above model, and attempt to validate it by analysis of various data sets.
 \end{abstract}
 %\pagebreak
 \section{Introduction}
-The basic assumption of evolution is ‚Äúsurvival of the fitted‚Äù - 
+The basic assumption of evolution is ìsurvival of the fittedî - 
 random mutations constantly occur, and there is a natural selection of those  mutations that are fittest in their environments. 
-In the context of ‚Äúmultiple objective evolution‚Äù, 
-the fitness is measured with respect to several ‚Äútasks‚Äù ‚Äì e.g. - swimming, running etc. 
+In the context of ìmultiple objective evolutionî, 
+the fitness is measured with respect to several ìtasksî ñ e.g. - swimming, running etc. 
 The evolutionary point of view dictates in that case that if organism $A$ is fitter than organism $B$ in every aspect 
 (runs faster, swims better), organism $B$ will have less reproductive success. 
 Each organism can be described by a collection of quantitative attributes 
-(for example ‚Äì length of feet, width of body and so forth). 
+(for example ñ length of feet, width of body and so forth). 
 We consider a finite set of $n$ attributes. In that case, each organism can be represented as a vector in $\mathbb{R}^n$.
 \section{Background}
-Our research assumption is that there are $k$ ‚Äúarchetypes‚Äù: $x_1,\ldots,x_k \in \mathbb{R}^n$. 
+Our research assumption is that there are $k$ ìarchetypesî: $x_1,\ldots,x_k \in \mathbb{R}^n$. 
 Each archetype represents an organism that is optimal for dealing with a certain task that supports survival 
-(e.g. - ‚Äúthe perfect swimmer‚Äù and ‚Äúthe perfect runner‚Äù). 
+(e.g. - ìthe perfect swimmerî and ìthe perfect runnerî). 
 Denote by $X$ the subset of $\mathbb{R}^n$ that represent all of the observable organisms. 
 For each $1\leq i \leq k$, there is a function $f_i: X \rightarrow \mathbb{R}$ 
 which describes the fitness of an organism $x \in X$ to deal with the task $i$ . 
@@ -76,7 +76,7 @@ and is strictly better in at least one of the tasks.
 \begin{define}
 The \textit{Pareto Frontier} is the set of all maximal points in X with respect to this order.
 \end{define}
-The Pareto frontier consists of all organisms for which there doesn‚Äôt exist an organism that deals with every task better than them. 
+The Pareto frontier consists of all organisms for which there doesnít exist an organism that deals with every task better than them. 
 Hence, it consists of all evolutionarily possible organisms. 
 
 Within this framework, there are two open research directions which are of interest to me:
@@ -102,7 +102,7 @@ We place all rodents on a plane whose axes are $M_2/M_1$ and $M_3/M_1$
 It is shown that all existing rodents fall on a straight line between two points, 
 or differently phrased, on the convex hull of these points. 
 These results fit the model if the above mentioned points are taken to be the archetypes, 
-and the fitness of each rodent to the archetype‚Äôs associated task is taken to simply be the distance 
+and the fitness of each rodent to the archetypeís associated task is taken to simply be the distance 
 in the $M_3/M_1 \times M_2/M_1$ plane. 
 Under these assumptions, according to the above theorem the Pareto Frontier is the convex hull of the two archetypes. 
 All that remains to be explained is which tasks the archetypes are designed to deal with. 
@@ -135,18 +135,18 @@ properly establish the above claims.
 \end{itemize}
 
 \section{Proposed Research Goals}
-As stated above ‚Äì I would like to conduct research in two directions:
+As stated above ñ I would like to conduct research in two directions:
 \begin{itemize}
   \item Approach the problem of theoretically describing the Pareto Frontier under different assumptions.
   \item Check the validity of the model according to which species are at the Pareto Frontier 
         of a number of archetypes, 
         by acquiring data for different species and attempting to recover the underlying archetypes.
 \end{itemize}
-The first step will be to approach the question of the Pareto Frontier‚Äôs shape 
+The first step will be to approach the question of the Pareto Frontierís shape 
 for a more general case than the one already proven. 
 In that case, the fitness functions are still of the form 
 $f_i(x) = f_i(\norm[x-x_i])$. However, the used norm ($\norm[.]$) can be different for each archetype. 
-This means that differing from one archetype doesn‚Äôt have the same biological implications as differing 
+This means that differing from one archetype doesnít have the same biological implications as differing 
 from a second archetype. The steps toward answering this question will be to:
 \begin{itemize}
   \item Solve several examples numerically
@@ -176,9 +176,11 @@ Doing this will require to deal with the following tasks:
 
 
 More questions to approach:
-Is there a biological mechanism that guarantees that the evolution will be performed only on the Pareto Frontier?
-Can this principle (species reside in the Pareto Frontier generated by a number of archetypes) 
+\begin{itemize}
+\item Is there a biological mechanism that guarantees that the evolution will be performed only on the Pareto Frontier?
+\item Can this principle (species reside in the Pareto Frontier generated by a number of archetypes) 
 be generalized to describe other phenomena in nature, such as enzymes design?
+\end{itemize}
 
 \pagebreak
 
@@ -191,9 +193,9 @@ be generalized to describe other phenomena in nature, such as enzymes design?
 
 \begin{figure}
 \centering
-\subfigure[]{\includegraphics[width=2.4in]{birds2.eps}}
-\subfigure[]{\includegraphics[width=2.4in]{birds1.eps}}
-\caption{Each circle represent a bird species. $a_1, a_2, a_3$ and $a_4$ are the lengths of the 1st, 2nd, 3rd and 4th phalanx of that species' 4th digit, respectively. The colour of the circle represents the species' functional family. It can be seen that most of the data lies on a plane (a). Looking at this plane, and discarding the raptors, the data circles seem to form a triangle (b). The approximated triangle is plotted on the figure (black solid line).} 
+\subfigure[]{\includegraphics[width=2.4in]{birds2.eps} \label{fig:birdsplane}}
+\subfigure[]{\includegraphics[width=2.4in]{birds1.eps} \label{fig:birdstriangle}}
+\caption{Each circle represent a bird species. $a_1, a_2, a_3$ and $a_4$ are the lengths of the 1st, 2nd, 3rd and 4th phalanx of that species' 4th digit, respectively. The colour of the circle represents the species' functional family. It can be seen that most of the data lies on a plane \subref{fig:birdsplane}. Looking at this plane, and discarding the raptors, the data circles seem to form a triangle \subref{fig:birdstriangle}. The approximated triangle is plotted on the figure (black solid line).} 
 
 \label{fig:birds}
 \end{figure}
